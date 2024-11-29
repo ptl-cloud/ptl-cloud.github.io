@@ -1,0 +1,44 @@
+// Navigator
+.ptl-nav-color {
+  @extend .w3-dark-gray;
+}
+.ptl-nav-active {
+  @extend .w3-blue-gray;
+}
+
+// Banner
+$banner-height: 300px;
+
+// General HTML elements
+h1,h2,h3,h4 {
+  @extend .w3-text-brown;
+  font-family: "Helvetica Narrow", "Arial Narrow", sans-serif;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+
+// Footer
+.ptl-footer-color {
+  @extend .w3-dark-gray;
+}
+.ptl-footer-text-color {
+  @extend .w3-text-white;
+}
+footer h2 {
+  @extend .ptl-footer-text-color; // Override default h2 colour
+}
+
+// Default table layout, all borders visible
+table{
+  border-collapse: collapse;
+  border-spacing: 0;
+  border:2px solid #000000;
+}
+
+th{
+  border:2px solid #000000;
+}
+
+td{
+  border:1px solid #000000;
+}

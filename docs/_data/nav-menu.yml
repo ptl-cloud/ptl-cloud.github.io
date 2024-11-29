@@ -1,0 +1,10 @@
+- text: Home
+  url: /
+- text: Blog
+  url: /blog/
+- text: Services
+  subitems:
+    - text: DevOps
+      url: /devops/
+- text: About
+  url: /about/
