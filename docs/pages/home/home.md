@@ -3,8 +3,8 @@ layout: default
 title: Home
 permalink: /
 
-banner-image: /assets/images/AdobeStock_169936222.jpeg
-banner-text: Engineering for Success
+banner-image: /assets/images/designer/Pathway_1792x1024.jpeg
+banner-text: PTL-Cloud
 ---
 
 <!-- Latest blog post -->
