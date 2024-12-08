@@ -1,20 +1,20 @@
 <!-- Site navigation bar -->
 <div class="w3-top">
-  <nav class="w3-bar ptl-nav-color">
+  <nav class="w3-bar ptl-nav-bg-color">
     {% for item in site.data.nav-menu %}
       {% if item.subitems %}
         <div class="w3-dropdown-hover">
-          <button class="w3-button">{{ item.text }}</button>
-          <div class="w3-dropdown-content w3-bar-block w3-card-4 ptl-nav-color">
+          <button class="w3-button ptl-nav-bg-hover">{{ item.text }}</button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4 ptl-nav-bg-color">
             {% for subitem in item.subitems %}
-              <a href="{{ subitem.url }}" class="w3-bar-item w3-button">{{ subitem.text }}</a>
+              <a href="{{ subitem.url }}" class="w3-bar-item w3-button ptl-nav-bg-hover">{{ subitem.text }}</a>
             {% endfor %}
           </div>
         </div>
       {% else %}
-        <a href="{{ item.url }}" class="w3-bar-item w3-button{% if page.url == item.url %} ptl-nav-active{% endif %}">{{ item.text }}</a>
+        <a href="{{ item.url }}" class="w3-bar-item w3-button ptl-nav-bg-hover{% if page.url == item.url %} ptl-nav-bg-active{% endif %}">{{ item.text }}</a>
       {% endif %}
     {% endfor %}
   </nav>
 </div>
-<div class="w3-bar ptl-nav-color"><div class="w3-bar-item w3-button">PTL</div></div>
+<div class="w3-bar ptl-nav-bg-color"><div class="w3-bar-item w3-button">PTL</div></div>

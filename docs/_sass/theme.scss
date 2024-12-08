@@ -1,9 +1,12 @@
-// Navigator
-.ptl-nav-color {
+// Navigator background
+.ptl-nav-bg-color {
   @extend .w3-dark-gray;
 }
-.ptl-nav-active {
+.ptl-nav-bg-active {
   @extend .w3-blue-gray;
+}
+.ptl-nav-bg-hover {
+  @extend .w3-hover-grey; // Must be a w3-hover class
 }
 
 // Banner
@@ -18,14 +21,14 @@ h1,h2,h3,h4 {
 }
 
 // Footer
-.ptl-footer-color {
+.ptl-footer-bg-color {
   @extend .w3-dark-gray;
 }
 .ptl-footer-text-color {
   @extend .w3-text-white;
 }
 footer h2 {
-  @extend .ptl-footer-text-color; // Override default h2 colour
+  @extend .ptl-footer-text-color; // Override default header colour
 }
 
 // Default table layout, all borders visible
@@ -34,11 +37,9 @@ table{
   border-spacing: 0;
   border:2px solid #000000;
 }
-
 th{
   border:2px solid #000000;
 }
-
 td{
   border:1px solid #000000;
 }

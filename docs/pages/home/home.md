@@ -16,7 +16,7 @@ banner-text: PTL-Cloud
   </div>
 
   <div class="w3-container w3-cell w3-mobile">
-    <h2 class="w3-center"><a href="/{{ post.url }}">{{ post.title }}</a></h2>
+    <h2 class="w3-center"><a href="{{ post.url }}">{{ post.title }}</a></h2>
     <p>By {{ post.author }} on {{ post.date | date: "%B %-d, %Y" }}</p>
     {% assign preprocessed_content=post.content | replace: '</h', '.</h' %}
     {% assign cleaned_content=preprocessed_content | strip_html | truncatewords:50 %}
