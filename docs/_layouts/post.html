@@ -3,7 +3,7 @@
 
 # Supported page variables:
 # banner-image: Path to banner image
-# banner-text: Text to overlay banner image
+# banner-title: Title for banner
 ---
 
 <!DOCTYPE html>
@@ -14,7 +14,7 @@
 <body>
   {% include navigation-bar.html %}
   {% if page.banner-image %}
-    {% include banner.html image=page.banner-image text=page.banner-text %}
+    {% include ptl-hero-banner.html image=page.banner-image title=page.banner-title %}
   {% endif %}
   <main class="w3-container">
     <div class="w3-row">
