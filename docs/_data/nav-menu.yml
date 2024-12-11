@@ -2,9 +2,7 @@
   url: /
 - text: Blog
   url: /blog/
-- text: Services
+- text: Elements
   subitems:
-    - text: DevOps
-      url: /devops/
-- text: About
-  url: /about/
+    - text: Square Image
+      url: /elements/ptl-square-image
