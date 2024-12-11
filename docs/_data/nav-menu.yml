@@ -2,7 +2,7 @@
   url: /
 - text: Blog
   url: /blog/
-- text: Services
+- text: Elements
   subitems:
-    - text: DevOps
-      url: /devops/
+    - text: Hero Banner
+      url: /elements/ptl-hero-banner.html
