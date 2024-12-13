@@ -4,5 +4,7 @@
   url: /blog/
 - text: Elements
   subitems:
+    - text: Hero Banner
+      url: /elements/ptl-hero-banner.html
     - text: Square Image
       url: /elements/ptl-square-image

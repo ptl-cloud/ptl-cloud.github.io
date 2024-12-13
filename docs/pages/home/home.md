@@ -4,7 +4,7 @@ title: Home
 permalink: /
 
 banner-image: /assets/images/designer/Pathway_1792x1024.jpeg
-banner-text: PTL-Cloud
+banner-title: PTL-Cloud
 ---
 
 <!-- Latest blog post -->
