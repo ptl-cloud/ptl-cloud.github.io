@@ -13,3 +13,10 @@
   margin: 0 auto;
   border: none;
 }
+
+// Hero Banner image
+.ptl-hero-banner-image {
+  width: 100%;
+  height: $banner-height;
+  object-fit: cover;
+}

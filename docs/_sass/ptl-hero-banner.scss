@@ -1,7 +1,0 @@
-// Banner image. Width: 100%. Height: $banner-height
-.ptl-hero-banner-image {
-  width: 100%;
-  height: 100%;
-  max-height: $banner-height;
-  object-fit: cover; // Using this so the image can be any size and still look halfway decent.
-}
