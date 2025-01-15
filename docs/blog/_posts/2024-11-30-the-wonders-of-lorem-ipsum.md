@@ -3,7 +3,6 @@ title: "The Wonders of Lorem Ipsum"
 layout: post
 
 banner-image: /assets/images/designer/20241130_LoremIpsum.jpeg
-banner-title: "The Wonders of Lorem Ipsum"
 author: Peter Wilks
 ---
 
