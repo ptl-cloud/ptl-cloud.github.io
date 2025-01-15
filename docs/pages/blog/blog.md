@@ -14,7 +14,7 @@ permalink: /blog/
 <ul>
   {% for post in site.posts %}
     <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
+      <a href="{{ post.url }}">{{ post.title }}{% if post.sub-title %}: {{ post.sub-title }}{% endif %}</a>
       <p>By {{ post.author }} on {{ post.date | date: "%B %-d, %Y" }}</p>
       <!-- Excerpt of the post, HTML is stripped but ensure headers have a trailing full stop -->
       {% assign preprocessed_content=post.content | replace: '</h', '.</h' %}
