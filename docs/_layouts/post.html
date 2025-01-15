@@ -3,7 +3,7 @@
 
 # Supported page variables:
 # banner-image: Path to banner image
-# banner-title: Title for banner
+# NOTE: Page title is used for banner title
 ---
 
 <!DOCTYPE html>
@@ -14,7 +14,7 @@
 <body>
   {% include navigation-bar.html %}
   {% if page.banner-image %}
-    {% include ptl-hero-banner.html image=page.banner-image title=page.banner-title %}
+    {% include ptl-hero-banner.html image=page.banner-image title=page.title %}
   {% endif %}
   <main class="w3-container">
     <div class="w3-row">
@@ -29,7 +29,6 @@
         {% endif %}
       </div>
     </div>
-    <h1>{{ page.title }}</h1>
     <p>Posted by {{ page.author }} on {{ page.date | date: "%B %-d, %Y" }}</p>
     {{ content }}
   </main>
