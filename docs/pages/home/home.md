@@ -5,6 +5,7 @@ permalink: /
 
 banner-image: /assets/images/designer/Pathway_1792x1024.jpeg
 banner-title: PTL-Cloud - w3css
+banner-text: A website for testing ideas to use with Jekyll
 ---
 
 <!-- Latest blog post -->

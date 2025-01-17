@@ -3,7 +3,9 @@
 
 # Supported page variables:
 # banner-image: Path to banner image
-# NOTE: Page title is used for banner title
+# NOTE:
+#    Page title is used for banner title
+#    Page sub-title is used for banner text
 ---
 
 <!DOCTYPE html>
@@ -14,7 +16,7 @@
 <body>
   {% include navigation-bar.html %}
   {% if page.banner-image %}
-    {% include ptl-hero-banner.html image=page.banner-image title=page.title %}
+    {% include ptl-hero-banner.html image=page.banner-image title=page.title text=page.sub-title %}
   {% endif %}
   <main class="w3-container">
     <div class="w3-row">
