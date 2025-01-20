@@ -2,6 +2,8 @@
 layout: default
 title: ptl-square-image
 permalink: elements/ptl-square-image
+
+banner-show: false
 ---
 
 # Square Image

@@ -3,6 +3,8 @@ layout: default
 title: Blog
 permalink: /blog/
 
+banner-show: false
+
 # The post exerpt is modified to remove html heading before it is displayed in the list, see:
 # https://stackoverflow.com/questions/39691139/jekyll-strip-html-but-allow-certain-html-tags
 ---

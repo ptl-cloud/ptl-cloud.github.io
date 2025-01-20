@@ -14,11 +14,23 @@
   border: none;
 }
 
-// Hero Banner image
+// Hero Banner
+.ptl-hero-banner {
+  width: 100%;
+  min-height: $ptl-banner-height;
+}
+// The box in the centre of the hero banner, containing the title and text
+.ptl-hero-banner-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+// object-fit: cover / scale-down
 .ptl-hero-banner-image {
   width: 100%;
-  height: $banner-height;
-  object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 // Apply a shadow, e.g. to make white text visible on pale background

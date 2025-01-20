@@ -2,7 +2,9 @@
 # Page layout for blog posts
 
 # Supported page variables:
+# banner-show: Banner will be shown if true (default = true)
 # banner-image: Path to banner image
+# banner-img-position: Vertical position of the image in the banner (Can be top or bottom).
 # NOTE:
 #    Page title is used for banner title
 #    Page sub-title is used for banner text
@@ -15,8 +17,8 @@
 
 <body>
   {% include navigation-bar.html %}
-  {% if page.banner-image %}
-    {% include ptl-hero-banner.html image=page.banner-image title=page.title text=page.sub-title %}
+  {% if page.banner-show %}
+    {% include ptl-hero-banner.html image=page.banner-image title=page.title text=page.sub-title img-position=page.banner-img-position %}
   {% endif %}
   <main class="w3-container">
     <div class="w3-row">
