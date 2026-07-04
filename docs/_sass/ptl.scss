@@ -1,0 +1,43 @@
+.ptl-square-image{
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+}
+
+// https://usefulangle.com/post/374/responsive-video-embed-with-css
+.ptl-video{
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16/9;
+  display: block;
+  margin: 0 auto;
+  border: none;
+}
+
+// Hero Banner
+.ptl-hero-banner {
+  width: 100%;
+  min-height: $ptl-banner-height;
+}
+// The box in the centre of the hero banner, containing the title and text
+.ptl-hero-banner-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+// object-fit: cover / scale-down
+.ptl-hero-banner-image {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+// Apply a shadow, e.g. to make white text visible on pale background
+.ptl-shadow-text {
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.65);
+}
+
+.ptl-background-opacity {
+  background: rgba(0, 0, 0, 0.3);
+}

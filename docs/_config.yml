@@ -32,6 +32,17 @@ plugins:
   - jekyll-feed
 markdown: kramdown
 
+sass:
+  load_paths: 
+    - _sass
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      banner-show: true
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
@@ -40,12 +51,12 @@ markdown: kramdown
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - Gemfile
+  - Gemfile.lock
 #   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
 #   - node_modules/
 #   - vendor/bundle/
 #   - vendor/cache/

@@ -9,8 +9,11 @@
   @extend .w3-hover-grey; // Must be a w3-hover class
 }
 
-// Banner
-$banner-height: 300px;
+// Hero Banner
+$ptl-banner-height: 300px;
+.ptl-banner-bg-color {
+  @extend .w3-blue-gray;
+}
 
 // General HTML elements
 h1,h2,h3,h4 {
