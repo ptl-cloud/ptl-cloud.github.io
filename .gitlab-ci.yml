@@ -12,14 +12,12 @@ check:
   stage: check
 
   script:
-    - chmod +x check.sh
     - ./check.sh
 
 pages:
   stage: deploy
 
   script:
-    - chmod +x build.sh
     - ./build.sh
 
   artifacts:
