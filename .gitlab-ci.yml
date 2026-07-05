@@ -12,13 +12,19 @@ check:
   stage: check
 
   script:
-    - ./check.sh
+    - bundle exec jekyll clean --source website
+    - bundle exec jekyll build \
+        --source website \
+        --destination public
 
 pages:
   stage: deploy
 
   script:
-    - ./build.sh
+    - bundle exec jekyll clean --source website
+    - bundle exec jekyll build \
+        --source website \
+        --destination public
 
   artifacts:
     paths:
