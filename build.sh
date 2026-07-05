@@ -11,8 +11,10 @@ docker compose \
     -f "${COMPOSE_FILE}" \
     run --rm \
     "${SERVICE_NAME}" \
-    bundle exec jekyll build --source website
+    bundle exec jekyll build \
+        --source website \
+        --destination public
 
 echo
 echo "==> Build complete"
-echo "    Output directory: _site/"
+echo "    Output directory: public/"

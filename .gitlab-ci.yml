@@ -1,0 +1,30 @@
+image:
+  name: registry.gitlab.com/ptl-website/jekyll-builder:latest
+
+stages:
+  - check
+  - deploy
+
+variables:
+  JEKYLL_ENV: production
+
+check:
+  stage: check
+
+  script:
+    - chmod +x check.sh
+    - ./check.sh
+
+pages:
+  stage: deploy
+
+  script:
+    - chmod +x build.sh
+    - ./build.sh
+
+  artifacts:
+    paths:
+      - public
+
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
