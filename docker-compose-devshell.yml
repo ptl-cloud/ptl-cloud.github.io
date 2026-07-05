@@ -1,0 +1,22 @@
+services:
+  devshell:
+    image: jekyll-builder:latest
+    container_name: jekyll-builder
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    
+    # Interactive shell support
+    stdin_open: true
+    tty: true
+
+    # Port 4000 is the Jekyll server. Port 35729 is LiveReload.
+    ports:
+      - "4000:4000"
+      - "35729:35729"
+
+    # Avoid root-owned files in your repo
+    user: "${UID_HOST:-1000}:${GID_HOST:-1000}"
+
+    # Default command opens a shell (can be overridden by docker compose run ...)
+    command: ["bash"]
