@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ page.language | default: site.language | default: 'en' }}">
+
+{% include head.html %}
+
+<body class="ptl-page">
+  {% include navigation-bar.html %}
+
+  {% if page.banner-show %}
+    {% include ptl-hero-banner.html
+       image=page.banner-image
+       title=page.banner-title
+       text=page.banner-text
+       img-position=page.banner-img-position %}
+  {% endif %}
+
+  <main class="w3-container ptl-main">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+</body>
+</html>

@@ -1,6 +1,10 @@
 # PTL-Cloud Website
 
+This repository holds the source for the jekyll.ptl-cloud.com website
+
 Jekyll-based website for Pathway Technologies website experimentation.
+
+The website is hosted on GitLab.com pages.
 
 Development uses a shared `jekyll-builder` Docker image to provide a consistent build environment without requiring Jekyll or Ruby to be installed on the host machine.
 
@@ -15,7 +19,7 @@ Open an interactive shell:
 Start the development server with automatic rebuilds:
 
 ```bash
-Shell./serve.sh
+./serve.sh
 ```
 
 The site will be available at:

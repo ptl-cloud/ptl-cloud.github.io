@@ -1,4 +1,15 @@
-// Navigator background
+// =========================
+// Vertical rhythm scale
+// =========================
+$ptl-space-xs: 0.5rem;   // 8px
+$ptl-space-sm: 1rem;     // 16px
+$ptl-space-md: 2rem;     // 32px
+$ptl-space-lg: 3rem;     // 48px
+
+
+// =========================
+// Navigator theme
+// =========================
 .ptl-nav-bg-color {
   @extend .w3-dark-gray;
 }
@@ -9,13 +20,32 @@
   @extend .w3-hover-grey; // Must be a w3-hover class
 }
 
+
+// =========================
+// Button theme
+// =========================
+.ptl-btn-bg {
+  @extend .w3-dark-gray;
+  @extend .ptl-footer-text-color; // or white text explicitly
+}
+
+.ptl-btn-bg-hover {
+  @extend .w3-hover-grey; // hover state
+}
+
+
+// =========================
 // Hero Banner
+// =========================
 $ptl-banner-height: 300px;
 .ptl-banner-bg-color {
   @extend .w3-blue-gray;
 }
 
+
+// =========================
 // General HTML elements
+// =========================
 h1,h2,h3,h4 {
   @extend .w3-text-brown;
   font-family: "Helvetica Narrow", "Arial Narrow", sans-serif;
@@ -23,7 +53,10 @@ h1,h2,h3,h4 {
   font-weight: bold;
 }
 
+
+// =========================
 // Footer
+// =========================
 .ptl-footer-bg-color {
   @extend .w3-dark-gray;
 }
@@ -34,7 +67,11 @@ footer h2 {
   @extend .ptl-footer-text-color; // Override default header colour
 }
 
-// Default table layout, all borders visible
+
+// =========================
+// Default table layout
+// =========================
+// All borders visible
 table{
   border-collapse: collapse;
   border-spacing: 0;
