@@ -1,5 +1,5 @@
 {
-  "name": "PTL Cloud Jekyll Website",
+  "name": "Jekyll.PTL-Cloud.com Website",
   "dockerComposeFile": "../docker-compose-devshell.yml",
   "service": "devshell",
   "workspaceFolder": "/workspace",

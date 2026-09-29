@@ -1,7 +1,7 @@
 services:
   devshell:
     image: jekyll-builder:latest
-    container_name: jekyll-builder
+    container_name: jekyll-builder-ptl-cloud-com
     working_dir: /workspace
     volumes:
       - .:/workspace
