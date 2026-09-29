@@ -1,0 +1,51 @@
+{
+    // ---------------------------------------------------------------------
+    // Editor
+    // ---------------------------------------------------------------------
+
+    // Open every file in its own tab.
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+
+    // ---------------------------------------------------------------------
+    // Git
+    // ---------------------------------------------------------------------
+
+    // User refreshes Git manually.
+    "git.autorefresh": false,
+    "git.enabled": true,
+
+    // ---------------------------------------------------------------------
+    // File watching
+    // ---------------------------------------------------------------------
+
+    // Don't watch generated directories
+    "files.watcherExclude": {
+        "**/.git/**": true,
+        "**/public/**": true,
+    },
+
+    // Don't search generated directories
+    "search.exclude": {
+        "**/.venv/**": true,
+        "**/public/**": true
+    },
+
+    // ---------------------------------------------------------------------
+    // Copilot
+    // ---------------------------------------------------------------------
+
+    // Keep autocomplete enabled.
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false
+    },
+
+    // Disable automatic rename suggestions.
+    "github.copilot.renameSuggestions.triggerAutomatically": false,
+
+    // Disable next-edit suggestions.
+    // (Personal preference: explicit requests rather than proactive edits.)
+    "github.copilot.nextEditSuggestions.enabled": false
+}
