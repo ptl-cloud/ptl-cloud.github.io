@@ -42,9 +42,10 @@ selected with consideration for data protection and regulatory alignment.
 
 This website may include embedded content from third-party platforms, such as Vimeo or YouTube.
 
-Embedded content may collect data independently of this website.
-Once you interact with such content, the third-party platform
-acts as a separate data controller.
+Embedded content can cause its provider to receive technical information, such
+as your IP address and browser details, when the page loads, before you interact
+with the player. The provider may process this information under its own privacy
+policy and may set cookies when the embedded frame loads.
 
 ### Analytics (Future Use)
 
@@ -70,8 +71,8 @@ personal data may be transferred as part of that process, subject to applicable 
 
 At present, this website does not use cookies for analytics or tracking purposes.
 
-However, embedded third-party content (such as Vimeo or YouTube)
-may set cookies when interacted with.
+Embedded third-party content (such as Vimeo or YouTube) may set cookies when its
+frame loads, not only when you interact with the player.
 
 If additional cookies are introduced in the future, a separate Cookie Policy and
 consent mechanism will be provided where required.

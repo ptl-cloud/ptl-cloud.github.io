@@ -1,6 +1,6 @@
 ---
 ---
 
-@import "w3";
-@import "theme";
-@import "ptl";
+@use "w3";
+@use "theme" as *;
+@use "ptl";

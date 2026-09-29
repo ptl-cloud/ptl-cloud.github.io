@@ -5,6 +5,6 @@
 - text: Elements
   subitems:
     - text: Hero Banner
-      url: /elements/ptl-hero-banner.html
+      url: /elements/ptl-hero-banner/
     - text: Square Image
-      url: /elements/ptl-square-image
+      url: /elements/ptl-square-image/

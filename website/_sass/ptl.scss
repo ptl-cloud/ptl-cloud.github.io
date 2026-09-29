@@ -1,3 +1,6 @@
+@use "w3";
+@use "theme" as *;
+
 .ptl-square-image{
   width: 100%;
   object-fit: cover;
@@ -12,6 +15,10 @@
   display: block;
   margin: 0 auto;
   border: none;
+}
+
+.w3-dropdown-hover:focus-within .w3-dropdown-content {
+  display: block;
 }
 
 // Hero Banner

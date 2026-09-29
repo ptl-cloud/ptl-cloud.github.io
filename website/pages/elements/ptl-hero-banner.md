@@ -1,7 +1,7 @@
 ---
 layout: default
 title: ptl-hero-banner
-permalink: /elements/ptl-hero-banner
+permalink: /elements/ptl-hero-banner/
 
 banner-show: false
 ---

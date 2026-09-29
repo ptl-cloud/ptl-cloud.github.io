@@ -28,7 +28,7 @@ description: >-
 
 baseurl: ""
 
-url: "https://jekyll.ptl-cloud.com/"
+url: "https://jekyll.ptl-cloud.com"
 
 markdown: kramdown
 

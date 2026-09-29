@@ -4,8 +4,8 @@
     {% for item in site.data.nav-menu %}
       {% if item.subitems %}
         <div class="w3-dropdown-hover">
-          <button class="w3-button ptl-nav-bg-hover">{{ item.text }}</button>
-          <div class="w3-dropdown-content w3-bar-block w3-card-4 ptl-nav-bg-color">
+          <button class="w3-button ptl-nav-bg-hover" aria-haspopup="true" aria-controls="elements-menu">{{ item.text }}</button>
+          <div id="elements-menu" class="w3-dropdown-content w3-bar-block w3-card-4 ptl-nav-bg-color">
             {% for subitem in item.subitems %}
               <a href="{{ subitem.url }}" class="w3-bar-item w3-button ptl-nav-bg-hover">{{ subitem.text }}</a>
             {% endfor %}

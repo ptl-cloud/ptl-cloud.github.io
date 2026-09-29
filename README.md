@@ -51,5 +51,5 @@ Generate the final site:
 The generated output is written to:
 
 ```bash
-_site/
+public/
 ```
