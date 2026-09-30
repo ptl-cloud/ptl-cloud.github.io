@@ -4,9 +4,10 @@ set -euo pipefail
 
 echo "==> Building Jekyll site"
 
+cd website
+
 bundle exec jekyll build \
-    --source website \
-    --destination public
+    --destination ../public
 
 echo
 echo "==> Build complete"

@@ -4,11 +4,12 @@ set -euo pipefail
 
 echo "==> Running Jekyll validation"
 
-bundle exec jekyll clean --source website --destination public
+cd website
+
+bundle exec jekyll clean --destination ../public
 
 bundle exec jekyll build \
-    --source website \
-    --destination public
+    --destination ../public
 
 echo
 echo "==> Validation complete"

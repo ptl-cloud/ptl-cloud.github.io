@@ -16,17 +16,13 @@ Open an interactive shell:
 ./devshell.sh
 ```
 
-Start the development server with automatic rebuilds:
+Start the development server with automatic rebuilds (run this command from within the `devshell`):
 
 ```bash
 ./serve.sh
 ```
 
-The site will be available at:
-
-```
-http://localhost:4000
-```
+The site will be available at: http://localhost:4000
 
 Changes to source files are detected automatically and the site is rebuilt.
 
