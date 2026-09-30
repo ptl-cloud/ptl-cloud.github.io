@@ -20,7 +20,6 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "rebornix.Ruby",
         "sissel.shopify-liquid"
       ]
     }

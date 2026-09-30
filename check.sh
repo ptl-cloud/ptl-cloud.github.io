@@ -2,14 +2,16 @@
 
 set -euo pipefail
 
+ROOT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+cd "${ROOT_DIR}/website"
+
 echo "==> Running Jekyll validation"
 
-cd website
-
-bundle exec jekyll clean --destination ../public
+bundle exec jekyll clean \
+    --destination "${ROOT_DIR}/public"
 
 bundle exec jekyll build \
-    --destination ../public
+    --destination "${ROOT_DIR}/public"
 
 echo
 echo "==> Validation complete"
