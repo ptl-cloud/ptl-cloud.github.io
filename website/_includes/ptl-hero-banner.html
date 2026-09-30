@@ -1,16 +1,16 @@
 {% if include.image %}
 <div class="w3-container ptl-banner-bg-color ptl-hero-banner ptl-hero-banner-box ptl-hero-banner-image"
-     style="background-image: url('{{ include.image }}');
-            {% if include.img-position %}background-position: {{ include.img-position }}{% endif %}
+  style="background-image: url('{{ include.image | relative_url | escape }}');
+      {% if include.img-position == 'top' or include.img-position == 'bottom' %}background-position: {{ include.img-position }}{% endif %}
            ">
 {% else %}
 <div class="w3-container ptl-banner-bg-color ptl-hero-banner ptl-hero-banner-box">
 {% endif %}
   {% if include.title %}
   <div class="w3-container w3-center ptl-background-opacity">
-    <h1 class="w3-text-white">{{ include.title }}</h1>
+    <h1 class="w3-text-white">{{ include.title | escape }}</h1>
     {% if include.text %}
-      <p class="w3-text-white">{{ include.text }}</p>
+      <p class="w3-text-white">{{ include.text | escape }}</p>
     {% endif %}
   </div>
   {% endif %}

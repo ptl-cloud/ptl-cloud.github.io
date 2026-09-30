@@ -5,6 +5,13 @@
   "workspaceFolder": "/workspace",
   "shutdownAction": "stopCompose",
 
+  // Without this, VS Code execs postCreateCommand/terminals as root, causing
+  // root-owned files under the bind-mounted /workspace/.bundle directory.
+  "remoteUser": "devuser",
+  "containerUser": "devuser",
+
+  "postCreateCommand": "cd website && (bundle check || bundle install)",
+
   "forwardPorts": [4000, 35729],
   "portsAttributes": {
     "4000": {
@@ -20,7 +27,9 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "sissel.shopify-liquid"
+        "sissel.shopify-liquid",
+        "GitHub.copilot",
+        "GitHub.copilot-chat"
       ]
     }
   }

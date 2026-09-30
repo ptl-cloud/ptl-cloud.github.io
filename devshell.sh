@@ -52,10 +52,14 @@ echo "    (Your project is mounted at /workspace inside the container.)"
 echo
 
 # Run an interactive shell, auto-remove container on exit
-
+# Install gem dependencies
 UID_HOST="${UID_HOST}" GID_HOST="${GID_HOST}" \
   docker compose \
   -f "${COMPOSE_FILE}" \
   run --rm --service-ports \
   "${SERVICE_NAME}" \
-  bash
+  bash -c '
+    cd website
+    bundle check || bundle install
+    exec bash
+  '

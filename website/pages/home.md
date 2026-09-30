@@ -13,7 +13,7 @@ banner-text: A website for testing ideas to use with Jekyll
   {% assign post = site.posts.first %}
 
   <div class="w3-container w3-cell w3-mobile">
-    <img src="{{ post.banner-image }}" alt="{{ post.banner-alt | default: post.title | escape }}" style="width:100%;">
+    <img src="{{ post.banner-image | relative_url }}" alt="{{ post.banner-alt | default: post.title | escape }}" style="width:100%;">
   </div>
 
   <div class="w3-container w3-cell w3-mobile">

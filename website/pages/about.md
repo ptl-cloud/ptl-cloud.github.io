@@ -5,7 +5,7 @@ permalink: /about/
 banner-show: false
 ---
 
-<img src="/assets/images/PathwayLogoWithText_1000px.png"
+<img src="{{ '/assets/images/PathwayLogoWithText_1000px.png' | relative_url }}"
      alt="Pathway Technologies logo"
      class="ptl-about-logo">
 

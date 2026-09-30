@@ -1,7 +1,8 @@
 services:
   devshell:
-    image: jekyll-builder:latest
-    container_name: jekyll-builder-ptl-cloud-com
+    # Use the github-pages builder, as that installs the required gems on startup by reading the Gemfile.
+    image: github-pages-builder:latest
+    container_name: jekyll-ptl-cloud-com-builder
     working_dir: /workspace
     volumes:
       - .:/workspace

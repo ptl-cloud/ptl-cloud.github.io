@@ -11,16 +11,12 @@ variables:
 check:
   stage: check
   script:
-    - cd website
-    - bundle exec jekyll clean --destination ../public
-    - bundle exec jekyll build --destination ../public
+    - ./check.sh
 
 pages:
   stage: deploy
   script:
-    - cd website
-    - bundle exec jekyll clean --destination ../public
-    - bundle exec jekyll build --destination ../public
+    - ./build.sh
   artifacts:
     paths:
       - public
