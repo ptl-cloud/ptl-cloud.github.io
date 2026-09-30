@@ -161,4 +161,4 @@ please contact:
 This Privacy Policy may be updated from time to time to reflect changes in the website
 or applicable legal requirements.
 
-**Last updated:** June 2026
+**Last updated:** September 2026

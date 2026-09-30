@@ -1,7 +1,9 @@
 - text: Home
   url: /
+
 - text: Blog
   url: /blog/
+
 - text: Elements
   subitems:
     - text: Hero Banner
