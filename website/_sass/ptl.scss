@@ -115,6 +115,127 @@ body.ptl-page {
   padding-top: 48px; // match nav height
 }
 
+.ptl-page-heading,
+.ptl-page-content {
+  width: min(100%, 1120px);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.ptl-page-heading {
+  padding-top: clamp(2rem, 5vw, 4rem);
+  padding-bottom: $ptl-space-md;
+}
+
+.ptl-page-heading h1 {
+  margin: 0;
+  padding-left: $ptl-space-sm;
+  border-left: 5px solid $ptl-color-accent;
+  font-size: 2.5rem;
+}
+
+.ptl-page-content {
+  padding-bottom: $ptl-space-lg;
+}
+
+.ptl-page-content > p,
+.ptl-page-content > ul {
+  max-width: 72ch;
+}
+
+.ptl-page-content > h2 {
+  margin-top: $ptl-space-lg;
+}
+
+.ptl-page-content > h2:first-child {
+  margin-top: 0;
+}
+
+.ptl-about-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(220px, 0.7fr);
+  align-items: center;
+  gap: clamp(2rem, 6vw, 5rem);
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  background-color: $ptl-color-accent-soft;
+  border-top: 3px solid $ptl-color-accent;
+}
+
+.ptl-about-summary h2 {
+  margin-top: 0;
+  margin-bottom: $ptl-space-sm;
+  font-size: 1.75rem;
+}
+
+.ptl-about-summary p {
+  max-width: 62ch;
+  color: $ptl-color-muted;
+}
+
+.ptl-about-summary .ptl-about-lede {
+  color: $ptl-color-ink;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.ptl-about-brand {
+  display: flex;
+  min-height: 220px;
+  align-items: center;
+  justify-content: center;
+  padding: $ptl-space-md;
+  background-color: #ffffff;
+}
+
+.ptl-about-logo {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+}
+
+.ptl-about-sections {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(2rem, 6vw, 5rem);
+  row-gap: $ptl-space-lg;
+  padding-top: $ptl-space-lg;
+}
+
+.ptl-about-section {
+  padding-top: $ptl-space-sm;
+  border-top: 1px solid rgba(29, 45, 43, 0.2);
+}
+
+.ptl-about-section h2 {
+  margin-top: 0;
+  margin-bottom: $ptl-space-sm;
+  font-size: 1.5rem;
+}
+
+.ptl-about-index {
+  margin-top: 0;
+  margin-bottom: $ptl-space-xs;
+  color: $ptl-color-accent;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.ptl-about-section p,
+.ptl-about-section li {
+  color: $ptl-color-muted;
+}
+
+.ptl-about-section ul {
+  padding-left: 1.25rem;
+}
+
+.ptl-about-section li {
+  padding-left: 0.25rem;
+  margin-bottom: 0.35rem;
+}
+
 // Footer spacing
 .ptl-page footer {
   padding-top: $ptl-space-md;
@@ -125,31 +246,42 @@ body.ptl-page {
 }
 
 
-// =========================
-// About page logo
-// =========================
-.ptl-about-logo {
-  opacity: 0.95;
-
-  float: right;
-
-  width: 220px;        // fixed preferred size
-  max-width: 30%;      // scale down if container is narrow
-
-  height: auto;        // maintain aspect ratio
-
-  margin-left: 1.5rem;
-  margin-bottom: 1rem;
-}
-
 @media (max-width: 600px) {
+  .ptl-page nav.w3-bar {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .ptl-page nav.w3-bar > * {
+    flex: 0 0 auto;
+  }
+
+  .ptl-page nav.w3-bar .w3-bar-item,
+  .ptl-page nav.w3-bar .w3-button {
+    padding-right: 8px;
+    padding-left: 8px;
+    white-space: nowrap;
+  }
+
+  .ptl-page-heading {
+    padding-top: $ptl-space-md;
+    padding-bottom: $ptl-space-sm;
+  }
+
+  .ptl-page-heading h1 {
+    font-size: 2rem;
+  }
+
+  .ptl-about-intro,
+  .ptl-about-sections {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ptl-about-brand {
+    min-height: 0;
+  }
+
   .ptl-about-logo {
-    float: none;
-
-    display: block;
-    width: 180px;         // smaller on mobile
-    max-width: 80%;
-
-    margin: 0 auto 1.5rem auto;
+    max-width: 220px;
   }
 }

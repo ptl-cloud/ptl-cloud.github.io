@@ -8,15 +8,23 @@ $ptl-space-sm: 1rem;     // 16px
 $ptl-space-md: 2rem;     // 32px
 $ptl-space-lg: 3rem;     // 48px
 
+$ptl-color-ink: #1d2d2b;
+$ptl-color-muted: #52625f;
+$ptl-color-canvas: #f3f6f4;
+$ptl-color-accent: #12675f;
+$ptl-color-accent-soft: #e2eeeb;
+
 
 // =========================
 // Navigation theme
 // =========================
 .ptl-nav-bg-color {
-  @extend .w3-dark-gray;
+  background-color: $ptl-color-ink;
+  color: #ffffff;
 }
 .ptl-nav-bg-active {
-  @extend .w3-blue-gray;
+  background-color: $ptl-color-accent;
+  color: #ffffff;
 }
 .ptl-nav-bg-hover {
   @extend .w3-hover-grey; // Must be a w3-hover class
@@ -27,7 +35,7 @@ $ptl-space-lg: 3rem;     // 48px
 // Button theme
 // =========================
 .ptl-btn-bg {
-  @extend .w3-dark-gray;
+  background-color: $ptl-color-ink;
   @extend .w3-text-white;
 }
 
@@ -43,6 +51,14 @@ $ptl-space-lg: 3rem;     // 48px
   @extend .w3-blue-gray;
 }
 
+body.ptl-page {
+  background-color: $ptl-color-canvas;
+  color: $ptl-color-ink;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
 
 // =========================
 // General HTML elements
@@ -51,10 +67,19 @@ $ptl-space-lg: 3rem;     // 48px
 .ptl-page h2,
 .ptl-page h3,
 .ptl-page h4 {
-  @extend .w3-text-brown;
-  font-family: "Helvetica Narrow", "Arial Narrow", sans-serif;
-  font-variant: small-caps;
-  font-weight: bold;
+  color: $ptl-color-ink;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-variant: normal;
+  font-weight: 650;
+  line-height: 1.2;
+}
+.ptl-page a {
+  color: $ptl-color-accent;
+}
+.ptl-page .ptl-nav-bg-hover,
+.ptl-page a.ptl-button,
+.ptl-page footer a {
+  color: #ffffff;
 }
 
 
@@ -62,7 +87,7 @@ $ptl-space-lg: 3rem;     // 48px
 // Footer
 // =========================
 .ptl-footer-bg-color {
-  @extend .w3-dark-gray;
+  background-color: $ptl-color-ink;
 }
 .ptl-footer-text-color {
   @extend .w3-text-white;
