@@ -3,7 +3,7 @@
   <nav class="w3-bar ptl-nav-bg-color">
     {% for item in site.data.nav-menu %}
       {% if item.subitems %}
-        <div class="w3-dropdown-hover">
+        <div class="w3-dropdown-hover ptl-nav-dropdown">
           <button class="w3-button ptl-nav-bg-hover" aria-haspopup="true" aria-controls="elements-menu">{{ item.text }}</button>
           <div id="elements-menu" class="w3-dropdown-content w3-bar-block w3-card-4 ptl-nav-bg-color">
             {% for subitem in item.subitems %}

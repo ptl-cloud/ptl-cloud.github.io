@@ -1,14 +1,14 @@
 @use "w3";
 @use "theme" as *;
 
-.ptl-square-image{
+.ptl-square-image {
   width: 100%;
   object-fit: cover;
   aspect-ratio: 1/1;
 }
 
 // https://usefulangle.com/post/374/responsive-video-embed-with-css
-.ptl-video{
+.ptl-video {
   width: 100%;
   max-width: 800px;
   aspect-ratio: 16/9;
@@ -17,11 +17,18 @@
   border: none;
 }
 
-.w3-dropdown-hover:focus-within .w3-dropdown-content {
+.ptl-page table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.ptl-nav-dropdown:focus-within > .w3-dropdown-content {
   display: block;
 }
 
 // Hero Banner
+$ptl-banner-height: 300px;
+
 .ptl-hero-banner {
   width: 100%;
   min-height: $ptl-banner-height;
@@ -109,11 +116,11 @@ body.ptl-page {
 }
 
 // Footer spacing
-footer {
+.ptl-page footer {
   padding-top: $ptl-space-md;
   padding-bottom: $ptl-space-md;
 }
-footer p {
+.ptl-page footer p {
   margin: 0.25rem 0;
 }
 

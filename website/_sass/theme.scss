@@ -10,7 +10,7 @@ $ptl-space-lg: 3rem;     // 48px
 
 
 // =========================
-// Navigator theme
+// Navigation theme
 // =========================
 .ptl-nav-bg-color {
   @extend .w3-dark-gray;
@@ -28,7 +28,7 @@ $ptl-space-lg: 3rem;     // 48px
 // =========================
 .ptl-btn-bg {
   @extend .w3-dark-gray;
-  @extend .ptl-footer-text-color; // or white text explicitly
+  @extend .w3-text-white;
 }
 
 .ptl-btn-bg-hover {
@@ -39,7 +39,6 @@ $ptl-space-lg: 3rem;     // 48px
 // =========================
 // Hero Banner
 // =========================
-$ptl-banner-height: 300px;
 .ptl-banner-bg-color {
   @extend .w3-blue-gray;
 }
@@ -48,7 +47,10 @@ $ptl-banner-height: 300px;
 // =========================
 // General HTML elements
 // =========================
-h1,h2,h3,h4 {
+.ptl-page h1,
+.ptl-page h2,
+.ptl-page h3,
+.ptl-page h4 {
   @extend .w3-text-brown;
   font-family: "Helvetica Narrow", "Arial Narrow", sans-serif;
   font-variant: small-caps;
@@ -65,23 +67,21 @@ h1,h2,h3,h4 {
 .ptl-footer-text-color {
   @extend .w3-text-white;
 }
-footer h2 {
+.ptl-page footer h2 {
   @extend .ptl-footer-text-color; // Override default header colour
 }
 
 
 // =========================
-// Default table layout
+// Table borders
 // =========================
 // All borders visible
-table{
-  border-collapse: collapse;
-  border-spacing: 0;
+.ptl-page table {
   border:2px solid #000000;
 }
-th{
+.ptl-page th {
   border:2px solid #000000;
 }
-td{
+.ptl-page td {
   border:1px solid #000000;
 }
