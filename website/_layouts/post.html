@@ -1,4 +1,5 @@
 ---
+layout: base
 # Page layout for blog posts
 
 # Supported page variables:
@@ -10,34 +11,30 @@
 #    Page sub-title is used for banner text
 ---
 
-<!DOCTYPE html>
-<html lang="{{ page.language | default: site.language | default: 'en' }}">
+{% unless page.banner-show %}
+  <header class="ptl-post-heading">
+    <h1>{{ page.title | escape }}</h1>
+  </header>
+{% endunless %}
 
-{% include head.html %}
+<article class="ptl-post-content">
+  <p class="ptl-post-meta">By {{ page.author | default: site.author | default: site.title }} <span aria-hidden="true">/</span> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></p>
+  {{ content }}
+</article>
 
-<body>
-  {% include navigation-bar.html %}
-  {% if page.banner-show %}
-    {% include ptl-hero-banner.html image=page.banner-image title=page.title text=page.sub-title img-position=page.banner-img-position %}
-  {% endif %}
-  <main class="w3-container">
-    <div class="w3-row">
-      <div class="w3-container w3-half">
-        {% if page.previous.url %}
-          <a href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
-        {% endif %}
-      </div>
-      <div class="w3-container w3-half">
-        {% if page.next.url %}
-          <a href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
-        {% endif %}
-      </div>
-    </div>
-    <p>Posted by {{ page.author }} on {{ page.date | date: "%B %-d, %Y" }}</p>
-    {{ content }}
-  </main>
-  {% include footer.html %}
-</body>
-</html>
+<nav class="ptl-post-navigation" aria-label="Post navigation">
+  <div class="ptl-post-navigation-item ptl-post-navigation-previous">
+    {% if page.previous.url %}
+      <span>Previous</span>
+      <a href="{{ page.previous.url | relative_url }}">{{ page.previous.title | escape }}</a>
+    {% endif %}
+  </div>
+  <div class="ptl-post-navigation-item ptl-post-navigation-next">
+    {% if page.next.url %}
+      <span>Next</span>
+      <a href="{{ page.next.url | relative_url }}">{{ page.next.title | escape }}</a>
+    {% endif %}
+  </div>
+</nav>
 
 
