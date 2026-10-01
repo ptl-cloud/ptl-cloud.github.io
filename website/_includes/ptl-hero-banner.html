@@ -1,13 +1,49 @@
+{% if include.title-style == 'caption' %}
+<section class="ptl-hero-feature">
+  {% if include.image %}
+    {% if include.image-style == 'photo' %}
+  <div class="ptl-hero-banner ptl-hero-banner-photo"
+    style="--ptl-banner-photo: url('{{ include.image | relative_url | escape }}');">
+    <div class="ptl-hero-banner-photo-backdrop" aria-hidden="true"></div>
+    <img src="{{ include.image | relative_url | escape }}" alt="" aria-hidden="true"
+      {% if include.img-position == 'top' or include.img-position == 'bottom' %}style="object-position: {{ include.img-position }}"{% endif %}>
+  </div>
+    {% else %}
+  <div class="ptl-hero-banner ptl-hero-banner-cover"
+    style="background-image: url('{{ include.image | relative_url | escape }}');
+      {% if include.img-position == 'top' or include.img-position == 'bottom' %}background-position: {{ include.img-position }}{% endif %}">
+  </div>
+    {% endif %}
+  {% endif %}
+  {% if include.title %}
+  <div class="ptl-hero-caption">
+    <div class="ptl-hero-caption-inner">
+      <h1>{{ include.title | escape }}</h1>
+      {% if include.text %}<p>{{ include.text | escape }}</p>{% endif %}
+      {% if include.brand %}<p class="ptl-hero-caption-brand">{{ include.brand | escape }}</p>{% endif %}
+    </div>
+  </div>
+  {% endif %}
+</section>
+{% else %}
 {% if include.image %}
-<div class="w3-container ptl-banner-bg-color ptl-hero-banner ptl-hero-banner-box ptl-hero-banner-image"
+  {% if include.image-style == 'photo' %}
+<div class="w3-container ptl-banner-bg-color ptl-hero-banner ptl-hero-banner-box ptl-hero-banner-photo"
+  style="--ptl-banner-photo: url('{{ include.image | relative_url | escape }}');">
+  <div class="ptl-hero-banner-photo-backdrop" aria-hidden="true"></div>
+  <img src="{{ include.image | relative_url | escape }}" alt="" aria-hidden="true"
+    {% if include.img-position == 'top' or include.img-position == 'bottom' %}style="object-position: {{ include.img-position }}"{% endif %}>
+  {% else %}
+<div class="w3-container ptl-banner-bg-color ptl-hero-banner ptl-hero-banner-box ptl-hero-banner-cover"
   style="background-image: url('{{ include.image | relative_url | escape }}');
       {% if include.img-position == 'top' or include.img-position == 'bottom' %}background-position: {{ include.img-position }}{% endif %}
            ">
+  {% endif %}
 {% else %}
 <div class="w3-container ptl-banner-bg-color ptl-hero-banner ptl-hero-banner-box">
 {% endif %}
   {% if include.title %}
-  <div class="w3-container w3-center ptl-background-opacity">
+  <div class="w3-container w3-center ptl-background-opacity{% if include.image-style == 'photo' %} ptl-hero-banner-photo-content{% endif %}">
     <h1 class="w3-text-white">{{ include.title | escape }}</h1>
     {% if include.text %}
       <p class="w3-text-white">{{ include.text | escape }}</p>
@@ -15,3 +51,4 @@
   </div>
   {% endif %}
 </div>
+{% endif %}

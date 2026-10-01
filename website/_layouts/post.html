@@ -5,15 +5,17 @@ layout: base
 # Supported page variables:
 # banner-show: Banner will be shown if true (default = true)
 # banner-image: Path to banner image
+# banner-image-style: "photo" (default) preserves the image with blurred fill; use "cover" to crop.
 # banner-img-position: Vertical position of the image in the banner (Can be top or bottom).
-# NOTE:
-#    Page title is used for banner title
-#    Page sub-title is used for banner text
+# sub-title: Optional subtitle shown beneath the post title.
 ---
 
 {% unless page.banner-show %}
   <header class="ptl-post-heading">
     <h1>{{ page.title | escape }}</h1>
+    {% if page.sub-title %}
+      <p class="ptl-post-subtitle">{{ page.sub-title | escape }}</p>
+    {% endif %}
   </header>
 {% endunless %}
 

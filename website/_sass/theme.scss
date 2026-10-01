@@ -1,13 +1,13 @@
 @use "w3";
 
-// =========================
-// Vertical rhythm scale
-// =========================
+// Shared design tokens
+// Spacing scale
 $ptl-space-xs: 0.5rem;   // 8px
 $ptl-space-sm: 1rem;     // 16px
 $ptl-space-md: 2rem;     // 32px
 $ptl-space-lg: 3rem;     // 48px
 
+// Core color palette
 $ptl-color-ink: #1d2d2b;
 $ptl-color-muted: #52625f;
 $ptl-color-canvas: #f3f6f4;
@@ -32,23 +32,10 @@ $ptl-color-accent-soft: #e2eeeb;
 
 
 // =========================
-// Button theme
-// =========================
-.ptl-btn-bg {
-  background-color: $ptl-color-ink;
-  @extend .w3-text-white;
-}
-
-.ptl-btn-bg-hover {
-  @extend .w3-hover-grey; // hover state
-}
-
-
-// =========================
 // Hero Banner
 // =========================
 .ptl-banner-bg-color {
-  @extend .w3-blue-gray;
+  background-color: $ptl-color-accent-soft;
 }
 
 body.ptl-page {
@@ -97,16 +84,54 @@ body.ptl-page {
 }
 
 
-// =========================
-// Table borders
-// =========================
-// All borders visible
 .ptl-page table {
-  border:2px solid #000000;
+  width: 100%;
+  margin: $ptl-space-md 0;
+  border: 1px solid rgba(18, 103, 95, 0.22);
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: #ffffff;
 }
-.ptl-page th {
-  border:2px solid #000000;
-}
+
+.ptl-page th,
 .ptl-page td {
-  border:1px solid #000000;
+  padding: 0.75rem 1rem;
+  border-right: 1px solid rgba(18, 103, 95, 0.14);
+  border-bottom: 1px solid rgba(18, 103, 95, 0.14);
+  text-align: left;
+  vertical-align: top;
+}
+
+.ptl-page th:last-child,
+.ptl-page td:last-child {
+  border-right: 0;
+}
+
+.ptl-page tr:last-child td {
+  border-bottom: 0;
+}
+
+.ptl-page th {
+  background-color: $ptl-color-accent;
+  color: #ffffff;
+  font-weight: 650;
+}
+
+.ptl-page tbody tr:nth-child(even) {
+  background-color: $ptl-color-canvas;
+}
+
+.ptl-page tbody tr {
+  transition: background-color 120ms ease;
+}
+
+.ptl-page tbody tr:hover {
+  background-color: $ptl-color-accent-soft;
+}
+
+@media (max-width: 600px) {
+  .ptl-page th,
+  .ptl-page td {
+    padding: 0.6rem 0.7rem;
+  }
 }

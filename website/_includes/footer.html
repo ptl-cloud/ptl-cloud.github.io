@@ -1,9 +1,15 @@
 <footer class="w3-container ptl-footer-bg-color ptl-footer-text-color">
 
-  <div class="w3-padding-16">
+  <div class="ptl-footer-grid">
+    <section class="ptl-footer-column ptl-footer-company">
+      <h2>Pathway Technologies Ltd.</h2>
+    <a class="ptl-footer-brand" href="{{ '/' | relative_url }}" aria-label="Pathway Technologies Ltd. home">
+      <img src="{{ '/assets/images/PathwayLogo_1000px_Transparent.png' | relative_url }}" alt="Pathway Technologies logo">
+    </a>
+    </section>
 
+    <section class="ptl-footer-column">
     <h2>Contact</h2>
-
     <p>
       <a href="mailto:contact@pathway-technologies.com?subject=Enquiry">
         contact@pathway-technologies.com
@@ -13,9 +19,10 @@
     <p>
       <a href="{{ '/contact/' | relative_url }}">Contact page</a>
     </p>
+    </section>
 
-    <hr style="border-color: rgba(255,255,255,0.2);">
-
+    <section class="ptl-footer-column">
+      <h2>More</h2>
     <p>
       <a href="{{ '/privacy/' | relative_url }}">Privacy</a>
     </p>
@@ -32,7 +39,7 @@
         LinkedIn
       </a>
     </p>
-
+    </section>
   </div>
 
 </footer>

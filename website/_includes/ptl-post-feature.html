@@ -1,0 +1,23 @@
+{% assign post = include.post %}
+{% assign title_id = post.slug | prepend: 'post-feature-title-' %}
+{% assign preprocessed_content = post.content | replace: '</h', '.</h' %}
+{% assign cleaned_content = preprocessed_content | strip_html | truncatewords: 50 %}
+
+<section class="ptl-post-feature{% unless post.banner-image %} ptl-post-feature-no-image{% endunless %}" aria-labelledby="{{ title_id }}">
+  {% if post.banner-image %}
+    <img class="ptl-post-feature-image" src="{{ post.banner-image | relative_url }}" alt="{{ post.banner-alt | default: post.title | escape }}">
+  {% endif %}
+
+  <div class="ptl-post-feature-summary">
+    {% if include.label %}
+      <p class="ptl-post-feature-label">{{ include.label | escape }}</p>
+    {% endif %}
+    <h2 id="{{ title_id }}"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+    {% if post.sub-title %}
+      <p class="ptl-post-feature-subtitle">{{ post.sub-title | escape }}</p>
+    {% endif %}
+    <p class="ptl-post-feature-meta">By {{ post.author | default: site.author | default: site.title }} <span aria-hidden="true">/</span> {{ post.date | date: "%B %-d, %Y" }}</p>
+    <p>{{ cleaned_content }}</p>
+    <a class="ptl-post-feature-link" href="{{ post.url | relative_url }}">Read article <span aria-hidden="true">&rarr;</span></a>
+  </div>
+</section>

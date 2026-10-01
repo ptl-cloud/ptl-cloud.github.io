@@ -7,10 +7,21 @@
   {% include navigation-bar.html %}
 
   {% if page.banner-show %}
+    {% assign hero-title = page.banner-title %}
+    {% assign hero-title-style = page.banner-title-style %}
+    {% assign hero-text = page.banner-text %}
+    {% if page.layout == 'post' %}
+      {% assign hero-title = page.title %}
+      {% assign hero-title-style = 'caption' %}
+      {% assign hero-text = page.sub-title %}
+    {% endif %}
     {% include ptl-hero-banner.html
        image=page.banner-image
-       title=page.banner-title
-       text=page.banner-text
+       image-style=page.banner-image-style
+       title=hero-title
+       title-style=hero-title-style
+       text=hero-text
+      brand=page.banner-brand
        img-position=page.banner-img-position %}
   {% endif %}
 

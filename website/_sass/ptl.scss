@@ -1,12 +1,6 @@
 @use "w3";
 @use "theme" as *;
 
-.ptl-square-image {
-  width: 100%;
-  object-fit: cover;
-  aspect-ratio: 1/1;
-}
-
 // https://usefulangle.com/post/374/responsive-video-embed-with-css
 .ptl-video {
   width: 100%;
@@ -15,11 +9,6 @@
   display: block;
   margin: 0 auto;
   border: none;
-}
-
-.ptl-page table {
-  border-collapse: collapse;
-  border-spacing: 0;
 }
 
 .ptl-nav-dropdown:focus-within > .w3-dropdown-content {
@@ -39,19 +28,89 @@ $ptl-banner-height: 300px;
   justify-content: center;
   align-items: center;
 }
-// object-fit: cover / scale-down
-.ptl-hero-banner-image {
+// Default banner treatment: crop to fill the banner.
+.ptl-hero-banner-cover {
   width: 100%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
-
-// Apply a shadow, e.g. to make white text visible on pale background
-.ptl-shadow-text {
-  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.65);
+.ptl-hero-feature {
+  width: 100%;
+  margin: 0 auto $ptl-space-lg;
+  background-color: $ptl-color-accent-soft;
 }
+
+.ptl-hero-feature .ptl-hero-banner {
+  min-height: 0;
+  height: clamp(220px, 32vw, 360px);
+}
+
+.ptl-hero-caption {
+  background-color: $ptl-color-accent-soft;
+}
+
+.ptl-hero-caption-inner {
+  width: min(100%, 1120px);
+  margin: 0 auto;
+  padding: $ptl-space-md clamp(1rem, 3vw, 2rem);
+  border-left: 5px solid $ptl-color-accent;
+}
+
+.ptl-hero-caption-inner h1 {
+  margin: 0;
+  color: $ptl-color-accent;
+  font-size: 2rem;
+}
+
+.ptl-hero-caption-inner p {
+  max-width: 72ch;
+  margin: $ptl-space-xs 0 0;
+  color: $ptl-color-muted;
+  font-size: 1.1rem;
+}
+
+.ptl-hero-caption-inner .ptl-hero-caption-brand {
+  margin-top: $ptl-space-sm;
+  color: $ptl-color-accent;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.ptl-hero-banner-photo {
+  position: relative;
+  height: $ptl-banner-height;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.ptl-hero-banner-photo-backdrop {
+  display: block;
+  position: absolute;
+  z-index: 0;
+  inset: -16px;
+  background-image: var(--ptl-banner-photo);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  filter: blur(16px) brightness(0.7);
+}
+
+.ptl-hero-banner-photo > img {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.ptl-hero-banner-photo-content {
+  position: relative;
+  z-index: 2;
+}
+
 
 .ptl-background-opacity {
   background: rgba(0, 0, 0, 0.3);
@@ -66,6 +125,8 @@ $ptl-banner-height: 300px;
 // Service page content structure
 
 .ptl-service-content {
+  padding-bottom: $ptl-space-lg;
+
   h2 {
     margin-top: $ptl-space-lg;
   }
@@ -83,17 +144,137 @@ $ptl-banner-height: 300px;
   }
 }
 
+.ptl-page-subtitle {
+  max-width: 72ch;
+  margin: $ptl-space-sm 0 0;
+  color: $ptl-color-muted;
+  font-size: 1.25rem;
+  line-height: 1.45;
+}
+
+.ptl-service-intro {
+  max-width: 72ch;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.ptl-service-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(2rem, 6vw, 5rem);
+  row-gap: $ptl-space-lg;
+  padding-top: $ptl-space-lg;
+}
+
+.ptl-service-item {
+  min-width: 0;
+  padding-top: $ptl-space-sm;
+  border-top: 1px solid rgba(29, 45, 43, 0.2);
+}
+
+.ptl-service-item h2 {
+  margin: 0 0 $ptl-space-sm;
+  font-size: 1.5rem;
+}
+
+.ptl-service-item p {
+  max-width: 62ch;
+  color: $ptl-color-muted;
+}
+
+.ptl-service-item .ptl-button {
+  margin-top: $ptl-space-sm;
+}
+
+.ptl-home-services {
+  display: grid;
+  width: min(100%, 1120px);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  margin: 0 auto $ptl-space-lg;
+  padding: $ptl-space-md 0;
+}
+
+.ptl-home-service {
+  min-width: 0;
+  padding-top: $ptl-space-sm;
+  border-top: 1px solid rgba(29, 45, 43, 0.2);
+}
+
+.ptl-home-service h2 {
+  margin: 0 0 $ptl-space-sm;
+  font-size: 1.35rem;
+}
+
+.ptl-home-service p {
+  margin: 0 0 $ptl-space-sm;
+  color: $ptl-color-muted;
+}
+
+.ptl-home-service a,
+.ptl-home-about a {
+  font-weight: 650;
+}
+
+.ptl-home-about {
+  width: min(100%, 1120px);
+  margin: 0 auto;
+  padding: $ptl-space-lg 0;
+  border-top: 1px solid rgba(29, 45, 43, 0.2);
+}
+
+.ptl-home-about h2 {
+  margin: 0 0 $ptl-space-sm;
+  font-size: 1.5rem;
+}
+
+.ptl-home-about p {
+  max-width: 72ch;
+  color: $ptl-color-muted;
+}
+
+.ptl-home-about p:first-of-type {
+  color: $ptl-color-ink;
+}
+
 
 // =========================
 // Button
 // =========================
 .ptl-button {
   @extend .w3-button;
-  @extend .w3-small;
-  @extend .w3-border;
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1rem;
+  border: 1px solid $ptl-color-accent;
+  border-radius: 3px;
+  background-color: $ptl-color-accent;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 650;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+}
 
-  @extend .ptl-btn-bg;
-  @extend .ptl-btn-bg-hover;
+.ptl-button:hover {
+  border-color: $ptl-color-ink !important;
+  background-color: $ptl-color-ink !important;
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
+.ptl-button:focus-visible {
+  outline: 3px solid $ptl-color-accent-soft;
+  outline-offset: 3px;
+}
+
+.ptl-button:active {
+  background-color: $ptl-color-ink !important;
+  color: #ffffff !important;
 }
 
 // =========================
@@ -115,8 +296,12 @@ body.ptl-page {
   padding-top: 48px; // match nav height
 }
 
+// Center page and post sections on the same content grid.
 .ptl-page-heading,
-.ptl-page-content {
+.ptl-page-content,
+.ptl-post-heading,
+.ptl-post-content,
+.ptl-post-navigation {
   width: min(100%, 1120px);
   margin-right: auto;
   margin-left: auto;
@@ -151,14 +336,6 @@ body.ptl-page {
   margin-top: 0;
 }
 
-.ptl-post-heading,
-.ptl-post-content,
-.ptl-post-navigation {
-  width: min(100%, 1120px);
-  margin-right: auto;
-  margin-left: auto;
-}
-
 .ptl-post-heading {
   padding-top: clamp(2rem, 5vw, 4rem);
   padding-bottom: $ptl-space-md;
@@ -166,9 +343,16 @@ body.ptl-page {
 
 .ptl-post-heading h1 {
   margin: 0;
-  padding-left: $ptl-space-sm;
-  border-left: 5px solid $ptl-color-accent;
+  color: $ptl-color-accent;
   font-size: 2.5rem;
+}
+
+.ptl-post-subtitle {
+  max-width: 72ch;
+  margin: $ptl-space-sm 0 0;
+  color: $ptl-color-muted;
+  font-size: 1.25rem;
+  line-height: 1.45;
 }
 
 .ptl-post-content {
@@ -221,6 +405,7 @@ body.ptl-page {
   text-align: right;
 }
 
+// About page sections
 .ptl-about-intro {
   display: grid;
   grid-template-columns: minmax(0, 1.5fr) minmax(220px, 0.7fr);
@@ -306,11 +491,124 @@ body.ptl-page {
   margin-bottom: 0.35rem;
 }
 
+.ptl-post-feature {
+  display: grid;
+  width: min(100%, 1120px);
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: stretch;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  margin: 0 auto;
+  padding: clamp(1rem, 3vw, 2rem);
+  border-top: 3px solid $ptl-color-accent;
+  background-color: $ptl-color-accent-soft;
+}
+
+.ptl-post-feature-no-image {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.ptl-post-feature-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.ptl-post-feature-summary {
+  align-self: center;
+  min-width: 0;
+  padding: $ptl-space-sm 0;
+}
+
+.ptl-post-feature-label {
+  margin: 0 0 $ptl-space-xs;
+  color: $ptl-color-accent;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.ptl-post-feature-summary h2 {
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+.ptl-post-feature-summary h2 a {
+  color: $ptl-color-ink;
+  text-decoration: none;
+}
+
+.ptl-post-feature-summary h2 a:hover {
+  color: $ptl-color-accent;
+  text-decoration: underline;
+}
+
+.ptl-post-feature-subtitle {
+  margin: $ptl-space-xs 0 0;
+  color: $ptl-color-muted;
+  font-size: 1.15rem;
+}
+
+.ptl-post-feature-meta {
+  margin: $ptl-space-sm 0;
+  color: $ptl-color-muted;
+  font-size: 0.9rem;
+}
+
+.ptl-post-feature-meta span {
+  padding: 0 0.35rem;
+  color: $ptl-color-accent;
+}
+
+.ptl-post-feature-link {
+  display: inline-block;
+  margin-top: $ptl-space-xs;
+  font-weight: 650;
+}
+
+.ptl-post-feature-list {
+  display: grid;
+  gap: $ptl-space-lg;
+  margin: $ptl-space-lg 0;
+}
+
 // Footer spacing
 .ptl-page footer {
   padding-top: $ptl-space-md;
   padding-bottom: $ptl-space-md;
 }
+
+.ptl-footer-grid {
+  display: grid;
+  width: min(100%, 1120px);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: $ptl-space-lg;
+  margin: 0 auto;
+}
+
+.ptl-footer-column h2 {
+  margin: 0 0 $ptl-space-sm;
+  font-size: 1.1rem;
+}
+
+.ptl-footer-brand {
+  display: inline-flex;
+  width: 128px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: $ptl-space-sm;
+  padding: 0.5rem;
+  background-color: #ffffff;
+}
+
+.ptl-footer-brand img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .ptl-page footer p {
   margin: 0.25rem 0;
 }
@@ -351,6 +649,10 @@ body.ptl-page {
     font-size: 2rem;
   }
 
+  .ptl-post-subtitle {
+    font-size: 1.1rem;
+  }
+
   .ptl-post-navigation {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -360,8 +662,57 @@ body.ptl-page {
   }
 
   .ptl-about-intro,
-  .ptl-about-sections {
+  .ptl-about-sections,
+  .ptl-service-list,
+  .ptl-home-services,
+  .ptl-post-feature {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ptl-footer-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: $ptl-space-md;
+  }
+
+  .ptl-home-services {
+    gap: $ptl-space-md;
+  }
+
+  .ptl-home-about {
+    padding: $ptl-space-md 0;
+  }
+
+  .ptl-post-feature-list {
+    gap: $ptl-space-md;
+  }
+
+  .ptl-post-feature {
+    gap: $ptl-space-sm;
+  }
+
+  .ptl-post-feature-image {
+    height: auto;
+    min-height: 0;
+  }
+
+  .ptl-post-feature-summary {
+    padding-top: 0;
+  }
+
+  .ptl-page-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .ptl-hero-caption {
+    padding: 0;
+  }
+
+  .ptl-hero-caption-inner {
+    padding: $ptl-space-sm;
+  }
+
+  .ptl-hero-caption-inner h1 {
+    font-size: 1.65rem;
   }
 
   .ptl-about-brand {

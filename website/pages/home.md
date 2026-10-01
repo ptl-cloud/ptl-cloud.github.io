@@ -4,32 +4,37 @@ title: Home
 permalink: /
 
 banner-image: /assets/images/designer/Pathway_1792x1024.jpeg
+banner-image-style: cover
+banner-title-style: caption
 banner-title: PTL-Cloud - w3css
+banner-brand: Pathway Technologies Ltd.
 banner-text: A website for testing ideas to use with Jekyll
 ---
 
-<!-- Latest blog post -->
-<div class="w3-margin-top w3-cell-row">
+<div class="w3-container w3-margin-top">
+
+  <!-- Latest Blog Post -->
   {% assign post = site.posts.first %}
+  {% include ptl-post-feature.html post=post label="Latest article" %}
 
-  {% if post.banner-image %}
-    <div class="w3-container w3-cell w3-mobile">
-      <img src="{{ post.banner-image | relative_url }}" alt="{{ post.banner-alt | default: post.title | escape }}" style="width:100%;">
-    </div>
-  {% endif %}
+  <!-- Positioning / About -->
+  <section class="ptl-home-about">
+    <h2>About Pathway Technologies</h2>
 
-  <div class="w3-container {% if post.banner-image %}w3-cell{% endif %} w3-mobile">
-    <h2 class="w3-center"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-    <p>By {{ post.author }} on {{ post.date | date: "%B %-d, %Y" }}</p>
-    {% assign preprocessed_content=post.content | replace: '</h', '.</h' %}
-    {% assign cleaned_content=preprocessed_content | strip_html | truncatewords:50 %}
-    <p>{{ cleaned_content }}</p>
-  </div>
+    <p>
+      Pathway Technologies supports engineering organisations working in
+      safety-critical and regulated environments. We focus on delivering
+      practical, structured solutions that improve compliance, traceability,
+      and long-term maintainability.
+    </p>
+
+    <p>
+      Our approach combines deep engineering experience with a strong emphasis
+      on deterministic workflows, enabling teams to move faster while meeting
+      regulatory obligations with confidence.
+    </p>
+
+    <a href="/about/">Learn more →</a>
+  </section>
 
 </div>
-
-# About Us
-
-{% include vimeo.html video="530934651?h=a54220f999" %}
-
-<br>
