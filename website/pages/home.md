@@ -6,9 +6,8 @@ permalink: /
 banner-image: /assets/images/designer/Pathway_1792x1024.jpeg
 banner-image-style: cover
 banner-title-style: caption
-banner-title: PTL-Cloud - w3css
+banner-title: A website for testing ideas to use with Jekyll
 banner-brand: Pathway Technologies Ltd.
-banner-text: A website for testing ideas to use with Jekyll
 ---
 
 <div class="w3-container w3-margin-top">

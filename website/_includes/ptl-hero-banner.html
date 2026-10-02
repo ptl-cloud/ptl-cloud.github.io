@@ -1,4 +1,5 @@
-{% if include.title-style == 'caption' %}
+{% assign hero_title_style = include.title-style | default: 'overlay' %}
+{% if hero_title_style == 'caption' %}
 <section class="ptl-hero-feature">
   {% if include.image %}
     {% if include.image-style == 'photo' %}
@@ -18,9 +19,18 @@
   {% if include.title %}
   <div class="ptl-hero-caption">
     <div class="ptl-hero-caption-inner">
-      <h1>{{ include.title | escape }}</h1>
-      {% if include.text %}<p>{{ include.text | escape }}</p>{% endif %}
-      {% if include.brand %}<p class="ptl-hero-caption-brand">{{ include.brand | escape }}</p>{% endif %}
+      <div class="ptl-hero-caption-content">
+        {% if include.brand %}
+        <div class="ptl-hero-caption-logo-wrap">
+          <img class="ptl-hero-caption-logo" src="{{ '/assets/images/PathwayLogo_1000px_Transparent.png' | relative_url }}" alt="Pathway Technologies logo">
+        </div>
+        {% endif %}
+        <div class="ptl-hero-caption-copy">
+          <h1>{{ include.title | escape }}</h1>
+          {% if include.text %}<p>{{ include.text | escape }}</p>{% endif %}
+          {% if include.brand %}<p class="ptl-hero-caption-brand">{{ include.brand | escape }}</p>{% endif %}
+        </div>
+      </div>
     </div>
   </div>
   {% endif %}

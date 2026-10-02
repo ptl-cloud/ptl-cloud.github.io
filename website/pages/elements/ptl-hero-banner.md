@@ -14,17 +14,17 @@ banner-show: false
 
 | Parameter | Values | Behavior |
 | --- | --- | --- |
-| `image` | Image path; optional | Adds a banner image. Without it, the standard mode renders a solid-color banner. |
+| `title-style` | `overlay` (default), `caption` | `overlay` places copy over the image. `caption` places the image above the copy. |
+| `image` | Image path; optional | Adds a banner image. Without it, the overlay mode renders a solid-color banner. |
 | `title` | Text; optional | Displays the main heading. The text and brand are only rendered when a title is present. |
 | `text` | Text; optional | Adds supporting copy below the title. |
-| `brand` | Text; optional | Adds a brand line in caption mode (`title-style='caption'`). |
+| `brand` | Text; optional | In caption mode (`title-style='caption'`), adds a brand line and the transparent Pathway Technologies logo to its right. |
 | `image-style` | `cover` (default), `photo` | `cover` crops the image to fill the banner. `photo` shows the whole image, with a blurred, darkened backdrop filling the remaining space. |
-| `title-style` | Default, `caption` | Default places copy over the image. `caption` places the image above the copy. |
 | `img-position` | `top`, `bottom` | Aligns the image to the top or bottom while it is cropped or contained. The default is centered. |
 
 ## Standard banner
 
-The default mode crops the image to fill the banner and places the title and supporting text over it.
+The default `overlay` mode crops the image to fill the banner and places the title and supporting text over it. You can also set `title-style='overlay'` explicitly.
 
 {% include ptl-hero-banner.html image='/assets/images/designer/Pathway_1792x1024.jpeg' title='A Banner Title' text='Supporting text sits below the title.' %}
 
@@ -55,7 +55,7 @@ Set `image-style='photo'` to keep the full image visible. A blurred version of t
 
 ## Caption layout
 
-Set `title-style='caption'` to separate the image and copy. This mode also supports a `brand` line.
+Set `title-style='caption'` to separate the image and copy. When `brand` is supplied, the brand line appears beside the transparent company logo; the caption's green background remains visible behind it.
 
 {% include ptl-hero-banner.html image='/assets/images/designer/Pathway_1792x1024.jpeg' title-style='caption' title='A title below the image' text='Supporting copy is easy to read on the solid caption background.' brand='Pathway Technologies Ltd.' %}
 

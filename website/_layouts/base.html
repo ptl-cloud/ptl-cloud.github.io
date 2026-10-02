@@ -8,7 +8,7 @@
 
   {% if page.banner-show %}
     {% assign hero-title = page.banner-title %}
-    {% assign hero-title-style = page.banner-title-style %}
+    {% assign hero-title-style = page.banner-title-style | default: 'overlay' %}
     {% assign hero-text = page.banner-text %}
     {% if page.layout == 'post' %}
       {% assign hero-title = page.title %}
