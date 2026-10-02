@@ -5,6 +5,7 @@
   url: /blog/
 
 - text: Elements
+  url: /elements/
   subitems:
     - text: Hero Banner
       url: /elements/ptl-hero-banner/

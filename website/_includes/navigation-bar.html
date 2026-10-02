@@ -3,8 +3,13 @@
   <nav class="w3-bar ptl-nav-bg-color">
     {% for item in site.data.nav-menu %}
       {% if item.subitems %}
+        {% assign dropdown_page = site.pages | where: "url", item.url | first %}
         <div class="w3-dropdown-hover ptl-nav-dropdown">
+          {% if dropdown_page %}
           <a href="{{ item.url | relative_url }}" class="w3-button ptl-nav-bg-hover{% if page.url == item.url %} ptl-nav-bg-active{% endif %}" aria-haspopup="true" aria-controls="elements-menu">{{ item.text }}</a>
+          {% else %}
+          <button type="button" class="w3-button ptl-nav-bg-hover{% if page.url == item.url %} ptl-nav-bg-active{% endif %}" aria-haspopup="true" aria-controls="elements-menu">{{ item.text }}</button>
+          {% endif %}
           <div id="elements-menu" class="w3-dropdown-content w3-bar-block w3-card-4 ptl-nav-bg-color">
             {% for subitem in item.subitems %}
               <a href="{{ subitem.url | relative_url }}" class="w3-bar-item w3-button ptl-nav-bg-hover">{{ subitem.text }}</a>
