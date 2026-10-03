@@ -36,21 +36,21 @@ Cover crops the image to fill the banner. `img-position` controls which vertical
 
 ### Top
 
-**Values:** `title-style='overlay'`; `image-style='cover'`; `img-position='top'`; `image='/assets/images/designer/hero-chinese-woman-at-computer.png'`; `title='Top crop'`; `text` omitted; `brand` omitted.
+**Values:** `title-style='overlay'`; `image-style='cover'`; `img-position='top'`; `image='/assets/images/pexels/pexels-silverkblack-39853312.jpg'`; `title='Top crop'`; `text` omitted; `brand` omitted.
 
-{% include ptl-hero-banner.html image='/assets/images/designer/hero-chinese-woman-at-computer.png' title-style='overlay' image-style='cover' img-position='top' title='Top crop' %}
+{% include ptl-hero-banner.html image='/assets/images/pexels/pexels-silverkblack-39853312.jpg' title-style='overlay' image-style='cover' img-position='top' title='Top crop' %}
 
 ### Center
 
-**Values:** `title-style='overlay'`; `image-style='cover'`; `img-position='center'` (default); `image='/assets/images/designer/hero-chinese-woman-at-computer.png'`; `title='Centered crop'`; `text` omitted; `brand` omitted.
+**Values:** `title-style='overlay'`; `image-style='cover'`; `img-position='center'` (default); `image='/assets/images/pexels/pexels-silverkblack-39853312.jpg'`; `title='Centered crop'`; `text` omitted; `brand` omitted.
 
-{% include ptl-hero-banner.html image='/assets/images/designer/hero-chinese-woman-at-computer.png' title-style='overlay' image-style='cover' img-position='center' title='Centered crop' %}
+{% include ptl-hero-banner.html image='/assets/images/pexels/pexels-silverkblack-39853312.jpg' title-style='overlay' image-style='cover' img-position='center' title='Centered crop' %}
 
 ### Bottom
 
-**Values:** `title-style='overlay'`; `image-style='cover'`; `img-position='bottom'`; `image='/assets/images/designer/hero-chinese-woman-at-computer.png'`; `title='Bottom crop'`; `text` omitted; `brand` omitted.
+**Values:** `title-style='overlay'`; `image-style='cover'`; `img-position='bottom'`; `image='/assets/images/pexels/pexels-silverkblack-39853312.jpg'`; `title='Bottom crop'`; `text` omitted; `brand` omitted.
 
-{% include ptl-hero-banner.html image='/assets/images/designer/hero-chinese-woman-at-computer.png' title-style='overlay' image-style='cover' img-position='bottom' title='Bottom crop' %}
+{% include ptl-hero-banner.html image='/assets/images/pexels/pexels-silverkblack-39853312.jpg' title-style='overlay' image-style='cover' img-position='bottom' title='Bottom crop' %}
 
 ## Caption With Brand
 
@@ -64,9 +64,9 @@ Caption style places copy below the image. Here, both `title` and `brand` are su
 
 The photo treatment also works with caption style. The full image is contained and centered above the caption, with its blurred background behind it. `img-position` does not apply to photo style.
 
-**Values:** `title-style='caption'`; `image-style='photo'`; `img-position` unused; `image='/assets/images/designer/hero-chinese-woman-at-computer.png'`; `title` omitted; `brand='Pathway Technologies Ltd.'`; `text='An optional second line can wrap on mobile.'.
+**Values:** `title-style='caption'`; `image-style='photo'`; `img-position` unused; `image='/assets/images/pexels/pexels-silverkblack-39853312.jpg'`; `title` omitted; `brand='Pathway Technologies Ltd.'`; `text='An optional second line can wrap on mobile.'.
 
-{% include ptl-hero-banner.html image='/assets/images/designer/hero-chinese-woman-at-computer.png' title-style='caption' image-style='photo' brand='Pathway Technologies Ltd.' text='An optional second line can wrap on mobile.' %}
+{% include ptl-hero-banner.html image='/assets/images/pexels/pexels-silverkblack-39853312.jpg' title-style='caption' image-style='photo' brand='Pathway Technologies Ltd.' text='An optional second line can wrap on mobile.' %}
 
 ## Without an Image
 
