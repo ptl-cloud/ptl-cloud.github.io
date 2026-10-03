@@ -70,7 +70,8 @@ $ptl-banner-height: 300px;
 }
 
 .ptl-hero-caption-logo-wrap {
-  flex: 0 0 auto;
+  flex: 0 0 min(9rem, 25vw);
+  width: min(9rem, 25vw);
   align-self: stretch;
   display: flex;
   align-items: center;
@@ -78,9 +79,8 @@ $ptl-banner-height: 300px;
 
 .ptl-hero-caption-logo {
   display: block;
-  width: auto;
+  width: 100%;
   height: 100%;
-  max-width: 9rem;
   object-fit: contain;
 }
 
@@ -734,8 +734,16 @@ body.ptl-page {
     padding: $ptl-space-sm 0;
   }
 
+  .ptl-hero-caption-content {
+    gap: $ptl-space-sm;
+  }
+
   .ptl-hero-caption-inner h1 {
-    font-size: 1.65rem;
+    font-size: 1.4rem;
+  }
+
+  .ptl-hero-caption-inner p {
+    font-size: 1rem;
   }
 
   .ptl-about-brand {
