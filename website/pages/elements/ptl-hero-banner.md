@@ -36,19 +36,40 @@ Cover crops the image to fill the banner. `img-position` controls which vertical
 
 ### Top
 
-**Values:** `title-style='overlay'`; `image-style='cover'`; `img-position='top'`; `image='/assets/images/pexels/pexels-silverkblack-39853312.jpg'`; `title='Top crop'`; `text` omitted; `brand` omitted.
+**Values:**
+- `title-style='overlay'`
+- `image-style='cover'`
+- `img-position='top'`
+- `image='/assets/images/pexels/pexels-silverkblack-39853312.jpg'`
+- `title='Top crop'`
+- `text` omitted
+- `brand` omitted
 
 {% include ptl-hero-banner.html image='/assets/images/pexels/pexels-silverkblack-39853312.jpg' title-style='overlay' image-style='cover' img-position='top' title='Top crop' %}
 
 ### Center
 
-**Values:** `title-style='overlay'`; `image-style='cover'`; `img-position='center'` (default); `image='/assets/images/pexels/pexels-silverkblack-39853312.jpg'`; `title='Centered crop'`; `text` omitted; `brand` omitted.
+**Values:**
+- `title-style='overlay'`
+- `image-style='cover'`
+- `img-position='center'` (default)
+- `image='/assets/images/pexels/pexels-silverkblack-39853312.jpg'`
+- `title='Centered crop'`
+- `text` omitted
+- `brand` omitted
 
 {% include ptl-hero-banner.html image='/assets/images/pexels/pexels-silverkblack-39853312.jpg' title-style='overlay' image-style='cover' img-position='center' title='Centered crop' %}
 
 ### Bottom
 
-**Values:** `title-style='overlay'`; `image-style='cover'`; `img-position='bottom'`; `image='/assets/images/pexels/pexels-silverkblack-39853312.jpg'`; `title='Bottom crop'`; `text` omitted; `brand` omitted.
+**Values:**
+- `title-style='overlay'`
+- `image-style='cover'`
+- `img-position='bottom'`
+- `image='/assets/images/pexels/pexels-silverkblack-39853312.jpg'`
+- `title='Bottom crop'`
+- `text` omitted
+- `brand` omitted
 
 {% include ptl-hero-banner.html image='/assets/images/pexels/pexels-silverkblack-39853312.jpg' title-style='overlay' image-style='cover' img-position='bottom' title='Bottom crop' %}
 
@@ -56,7 +77,14 @@ Cover crops the image to fill the banner. `img-position` controls which vertical
 
 Caption style places copy below the image. Here, both `title` and `brand` are supplied to demonstrate precedence: the brand is the visible heading, and the company logo appears alongside the caption. The supporting `text` is the second line.
 
-**Values:** `title-style='caption'`; `image-style='cover'`; `img-position='center'` (default); `image='/assets/images/designer/Pathway_1792x1024.jpeg'`; `title='This title is replaced'`; `brand='Pathway Technologies Ltd.'`; `text='Engineering for safety-critical and regulated systems.'.
+**Values:**
+- `title-style='caption'`
+- `image-style='cover'`
+- `img-position='center'` (default)
+- `image='/assets/images/designer/Pathway_1792x1024.jpeg'`
+- `title='This title is replaced'`
+- `brand='Pathway Technologies Ltd.'`
+- `text='Engineering for safety-critical and regulated systems.'`
 
 {% include ptl-hero-banner.html image='/assets/images/designer/Pathway_1792x1024.jpeg' title-style='caption' image-style='cover' img-position='center' title='This title is replaced' brand='Pathway Technologies Ltd.' text='Engineering for safety-critical and regulated systems.' %}
 
@@ -64,7 +92,14 @@ Caption style places copy below the image. Here, both `title` and `brand` are su
 
 The photo treatment also works with caption style. The full image is contained and centered above the caption, with its blurred background behind it. `img-position` does not apply to photo style.
 
-**Values:** `title-style='caption'`; `image-style='photo'`; `img-position` unused; `image='/assets/images/pexels/pexels-silverkblack-39853312.jpg'`; `title` omitted; `brand='Pathway Technologies Ltd.'`; `text='An optional second line can wrap on mobile.'.
+**Values:**
+- `title-style='caption'`
+- `image-style='photo'`
+- `img-position` unused
+- `image='/assets/images/pexels/pexels-silverkblack-39853312.jpg'`
+- `title` omitted
+- `brand='Pathway Technologies Ltd.'`
+- `text='An optional second line can wrap on mobile.'`
 
 {% include ptl-hero-banner.html image='/assets/images/pexels/pexels-silverkblack-39853312.jpg' title-style='caption' image-style='photo' brand='Pathway Technologies Ltd.' text='An optional second line can wrap on mobile.' %}
 
@@ -74,12 +109,28 @@ The image is optional. The banner keeps its light-green background whether the t
 
 ### Overlay Text Only
 
-**Values:** `title-style='overlay'`; `image` omitted; `image-style='cover'` (default, unused); `img-position='center'` (default, unused without a cover image); `title='A simple text banner'`; `text='A title and supporting copy can be used on their own.'`; `brand` omitted.
+**Values:**
+- `title-style='overlay'`
+- `image` omitted
+- `image-style='cover'` (default, unused)
+- `img-position='center'` (default, unused without a cover image)
+- `title='A simple text banner'`
+- `text='A title and supporting copy can be used on their own.'`
+- `brand` omitted
 
 {% include ptl-hero-banner.html title-style='overlay' title='A simple text banner' text='A title and supporting copy can be used on their own.' %}
 
 ### Caption Brand Only
 
-**Values:** `title-style='caption'`; `image` omitted; `image-style='cover'` (default, unused); `img-position='center'` (default, unused without a cover image); `title='This title is replaced'`; `brand='Pathway Technologies Ltd.'`; `text` omitted. The logo appears because caption style and brand are both selected.
+**Values:**
+- `title-style='caption'`
+- `image` omitted
+- `image-style='cover'` (default, unused)
+- `img-position='center'` (default, unused without a cover image)
+- `title='This title is replaced'`
+- `brand='Pathway Technologies Ltd.'`
+- `text` omitted
+
+The logo appears because caption style and brand are both selected.
 
 {% include ptl-hero-banner.html title-style='caption' title='This title is replaced' brand='Pathway Technologies Ltd.' %}
