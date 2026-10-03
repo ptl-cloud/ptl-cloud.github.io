@@ -2,7 +2,9 @@
 layout: page
 title: Contact
 permalink: /contact/
-banner-show: false
+banner-show: true
+banner-title-style: caption
+banner-brand: Pathway Technologies Ltd.
 ---
 
 Pathway Technologies supports engineering teams working in regulated

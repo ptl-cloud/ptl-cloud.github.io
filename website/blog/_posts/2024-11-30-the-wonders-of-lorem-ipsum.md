@@ -4,6 +4,7 @@ layout: post
 
 banner-image: /assets/images/designer/20241130_LoremIpsum.jpeg
 banner-alt: A parchment scroll with ornate script, a quill, and an ink pot
+banner-image-style: photo
 author: Peter Wilks
 ---
 
