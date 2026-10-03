@@ -1,4 +1,9 @@
 {% assign hero_title_style = include.title-style | default: 'overlay' %}
+{% assign hero_heading = include.brand | default: include.title %}
+{% assign hero_image_position = include.img-position | default: 'center' %}
+{% unless hero_image_position == 'top' or hero_image_position == 'center' or hero_image_position == 'bottom' %}
+  {% assign hero_image_position = 'center' %}
+{% endunless %}
 {% if hero_title_style == 'caption' %}
 <section class="ptl-hero-feature">
   {% if include.image %}
@@ -6,17 +11,15 @@
   <div class="ptl-hero-banner ptl-hero-banner-photo"
     style="--ptl-banner-photo: url('{{ include.image | relative_url | escape }}');">
     <div class="ptl-hero-banner-photo-backdrop" aria-hidden="true"></div>
-    <img src="{{ include.image | relative_url | escape }}" alt="" aria-hidden="true"
-      {% if include.img-position == 'top' or include.img-position == 'bottom' %}style="object-position: {{ include.img-position }}"{% endif %}>
+    <img src="{{ include.image | relative_url | escape }}" alt="" aria-hidden="true">
   </div>
     {% else %}
   <div class="ptl-hero-banner ptl-hero-banner-cover"
-    style="background-image: url('{{ include.image | relative_url | escape }}');
-      {% if include.img-position == 'top' or include.img-position == 'bottom' %}background-position: {{ include.img-position }}{% endif %}">
+    style="background-image: url('{{ include.image | relative_url | escape }}'); background-position: center {{ hero_image_position }};">
   </div>
     {% endif %}
   {% endif %}
-  {% if include.title %}
+  {% if hero_heading or include.text %}
   <div class="ptl-hero-caption">
     <div class="ptl-hero-caption-inner">
       <div class="ptl-hero-caption-content">
@@ -26,9 +29,8 @@
         </div>
         {% endif %}
         <div class="ptl-hero-caption-copy">
-          <h1>{{ include.title | escape }}</h1>
+          {% if hero_heading %}<h1>{{ hero_heading | escape }}</h1>{% endif %}
           {% if include.text %}<p>{{ include.text | escape }}</p>{% endif %}
-          {% if include.brand %}<p class="ptl-hero-caption-brand">{{ include.brand | escape }}</p>{% endif %}
         </div>
       </div>
     </div>
@@ -41,23 +43,18 @@
 <div class="w3-container ptl-banner-bg-color ptl-hero-banner ptl-hero-banner-box ptl-hero-banner-photo"
   style="--ptl-banner-photo: url('{{ include.image | relative_url | escape }}');">
   <div class="ptl-hero-banner-photo-backdrop" aria-hidden="true"></div>
-  <img src="{{ include.image | relative_url | escape }}" alt="" aria-hidden="true"
-    {% if include.img-position == 'top' or include.img-position == 'bottom' %}style="object-position: {{ include.img-position }}"{% endif %}>
+  <img src="{{ include.image | relative_url | escape }}" alt="" aria-hidden="true">
   {% else %}
 <div class="w3-container ptl-banner-bg-color ptl-hero-banner ptl-hero-banner-box ptl-hero-banner-cover"
-  style="background-image: url('{{ include.image | relative_url | escape }}');
-      {% if include.img-position == 'top' or include.img-position == 'bottom' %}background-position: {{ include.img-position }}{% endif %}
-           ">
+  style="background-image: url('{{ include.image | relative_url | escape }}'); background-position: center {{ hero_image_position }};">
   {% endif %}
 {% else %}
 <div class="w3-container ptl-banner-bg-color ptl-hero-banner ptl-hero-banner-box">
 {% endif %}
-  {% if include.title %}
-  <div class="w3-container w3-center ptl-background-opacity{% if include.image-style == 'photo' %} ptl-hero-banner-photo-content{% endif %}">
-    <h1 class="w3-text-white">{{ include.title | escape }}</h1>
-    {% if include.text %}
-      <p class="w3-text-white">{{ include.text | escape }}</p>
-    {% endif %}
+  {% if hero_heading or include.text %}
+  <div class="w3-container w3-center ptl-background-opacity{% if include.image and include.image-style == 'photo' %} ptl-hero-banner-photo-content{% endif %}">
+    {% if hero_heading %}<h1 class="w3-text-white">{{ hero_heading | escape }}</h1>{% endif %}
+    {% if include.text %}<p class="w3-text-white">{{ include.text | escape }}</p>{% endif %}
   </div>
   {% endif %}
 </div>

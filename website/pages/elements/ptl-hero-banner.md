@@ -6,61 +6,80 @@ permalink: /elements/ptl-hero-banner/
 banner-show: false
 ---
 
-# Description
+# Hero Banner
 
-`ptl-hero-banner` supports three image treatments, optional copy, and vertical image positioning. The examples below render the include with each combination.
+The `ptl-hero-banner` include creates a responsive banner with optional imagery and up to two lines of text. Use `title-style` to choose whether the copy overlays the image or sits below it.
 
 ## Options
 
-| Parameter | Values | Behavior |
-| --- | --- | --- |
-| `title-style` | `overlay` (default), `caption` | `overlay` places copy over the image. `caption` places the image above the copy. |
-| `image` | Image path; optional | Adds a banner image. Without it, the overlay mode renders a solid-color banner. |
-| `title` | Text; optional | Displays the main heading. The text and brand are only rendered when a title is present. |
-| `text` | Text; optional | Adds supporting copy below the title. |
-| `brand` | Text; optional | In caption mode (`title-style='caption'`), adds a brand line and the transparent Pathway Technologies logo to its right. |
-| `image-style` | `cover` (default), `photo` | `cover` crops the image to fill the banner. `photo` shows the whole image, with a blurred, darkened backdrop filling the remaining space. |
-| `img-position` | `top`, `bottom` | Aligns the image to the top or bottom while it is cropped or contained. The default is centered. |
+| Option | Values | Default | Behavior |
+| --- | --- | --- | --- |
+| `title-style` | `overlay`, `caption` | `overlay` | `overlay` places white text over the banner image. `caption` places a separate text area below the image. |
+| `image` | Image path or omitted | Omitted | Adds the banner image. When omitted, the banner is a solid light-green area. |
+| `title` | Text or omitted | Omitted | Primary heading. It is replaced by `brand` when `brand` is provided. |
+| `text` | Text or omitted | Omitted | Optional secondary line, displayed even when neither `title` nor `brand` is set. Text can wrap on smaller screens. |
+| `brand` | Text or omitted | Omitted | Replaces `title` as the primary heading in either title style. With `title-style='caption'`, also displays the Pathway Technologies logo. |
+| `image-style` | `cover`, `photo` | `cover` | `cover` crops the image to fill the banner. `photo` keeps the full image visible and fills the remaining area with a blurred, darkened version of that image. |
+| `img-position` | `top`, `center`, `bottom` | `center` | Sets the vertical crop alignment when `image-style='cover'`. It has no effect with `photo`. |
 
-## Standard banner
+## Text Behavior
 
-The default `overlay` mode crops the image to fill the banner and places the title and supporting text over it. You can also set `title-style='overlay'` explicitly.
+- At most two text fields appear: the primary heading (`brand` or `title`) and the optional `text` line.
+- If both `title` and `brand` are supplied, only `brand` is used as the primary heading.
+- `text` is independent of the primary heading and can be used by itself.
+- In caption style, the company logo appears only when `brand` is supplied.
+- Without an image, either title style uses the same solid light-green banner background.
 
-{% include ptl-hero-banner.html image='/assets/images/designer/Pathway_1792x1024.jpeg' title='A Banner Title' text='Supporting text sits below the title.' %}
+## Cover Image Position
 
-## Image positioning
+Cover crops the image to fill the banner. `img-position` controls which vertical part of the image remains visible. These examples use the generated image of an adult Chinese woman working at a computer; each changes only the crop position.
 
-These examples use a portrait-oriented image so the top, center (default), and bottom alignments are easy to compare.
+### Top
 
-<div class="w3-row-padding w3-margin-top">
-  <div class="w3-half w3-margin-bottom">
-    {% include ptl-hero-banner.html image='/assets/images/designer/20250118_Designer.jpeg' title='Top aligned' img-position='top' %}
-    <p><code>img-position='top'</code></p>
-  </div>
-  <div class="w3-half w3-margin-bottom">
-    {% include ptl-hero-banner.html image='/assets/images/designer/20250118_Designer.jpeg' title='Centered (default)' %}
-    <p>Centered image; no <code>img-position</code> specified.</p>
-  </div>
-  <div class="w3-half w3-margin-bottom">
-    {% include ptl-hero-banner.html image='/assets/images/designer/20250118_Designer.jpeg' title='Bottom aligned' img-position='bottom' %}
-    <p><code>img-position='bottom'</code></p>
-  </div>
-</div>
+**Values:** `title-style='overlay'`; `image-style='cover'`; `img-position='top'`; `image='/assets/images/designer/hero-chinese-woman-at-computer.png'`; `title='Top crop'`; `text` omitted; `brand` omitted.
 
-## Photo treatment
+{% include ptl-hero-banner.html image='/assets/images/designer/hero-chinese-woman-at-computer.png' title-style='overlay' image-style='cover' img-position='top' title='Top crop' %}
 
-Set `image-style='photo'` to keep the full image visible. A blurred version of the same image fills the surrounding space.
+### Center
 
-{% include ptl-hero-banner.html image='/assets/images/designer/20250118_Designer.jpeg' image-style='photo' title='Full image, no crop' text='The image stays contained while the backdrop fills the banner.' %}
+**Values:** `title-style='overlay'`; `image-style='cover'`; `img-position='center'` (default); `image='/assets/images/designer/hero-chinese-woman-at-computer.png'`; `title='Centered crop'`; `text` omitted; `brand` omitted.
 
-## Caption layout
+{% include ptl-hero-banner.html image='/assets/images/designer/hero-chinese-woman-at-computer.png' title-style='overlay' image-style='cover' img-position='center' title='Centered crop' %}
 
-Set `title-style='caption'` to separate the image and copy. When `brand` is supplied, the brand line appears beside the transparent company logo; the caption's green background remains visible behind it.
+### Bottom
 
-{% include ptl-hero-banner.html image='/assets/images/designer/Pathway_1792x1024.jpeg' title-style='caption' title='A title below the image' text='Supporting copy is easy to read on the solid caption background.' brand='Pathway Technologies Ltd.' %}
+**Values:** `title-style='overlay'`; `image-style='cover'`; `img-position='bottom'`; `image='/assets/images/designer/hero-chinese-woman-at-computer.png'`; `title='Bottom crop'`; `text` omitted; `brand` omitted.
 
-## Text without an image
+{% include ptl-hero-banner.html image='/assets/images/designer/hero-chinese-woman-at-computer.png' title-style='overlay' image-style='cover' img-position='bottom' title='Bottom crop' %}
 
-The image is optional. Without one, the standard banner uses its solid background color.
+## Caption With Brand
 
-{% include ptl-hero-banner.html title='A simple text banner' text='A title and supporting copy can be used on their own.' %}
+Caption style places copy below the image. Here, both `title` and `brand` are supplied to demonstrate precedence: the brand is the visible heading, and the company logo appears alongside the caption. The supporting `text` is the second line.
+
+**Values:** `title-style='caption'`; `image-style='cover'`; `img-position='center'` (default); `image='/assets/images/designer/Pathway_1792x1024.jpeg'`; `title='This title is replaced'`; `brand='Pathway Technologies Ltd.'`; `text='Engineering for safety-critical and regulated systems.'.
+
+{% include ptl-hero-banner.html image='/assets/images/designer/Pathway_1792x1024.jpeg' title-style='caption' image-style='cover' img-position='center' title='This title is replaced' brand='Pathway Technologies Ltd.' text='Engineering for safety-critical and regulated systems.' %}
+
+## Caption With Photo
+
+The photo treatment also works with caption style. The full image is contained and centered above the caption, with its blurred background behind it. `img-position` does not apply to photo style.
+
+**Values:** `title-style='caption'`; `image-style='photo'`; `img-position` unused; `image='/assets/images/designer/hero-chinese-woman-at-computer.png'`; `title` omitted; `brand='Pathway Technologies Ltd.'`; `text='An optional second line can wrap on mobile.'.
+
+{% include ptl-hero-banner.html image='/assets/images/designer/hero-chinese-woman-at-computer.png' title-style='caption' image-style='photo' brand='Pathway Technologies Ltd.' text='An optional second line can wrap on mobile.' %}
+
+## Without an Image
+
+The image is optional. The banner keeps its light-green background whether the text overlays the banner area or appears in the caption area.
+
+### Overlay Text Only
+
+**Values:** `title-style='overlay'`; `image` omitted; `image-style='cover'` (default, unused); `img-position='center'` (default, unused without a cover image); `title='A simple text banner'`; `text='A title and supporting copy can be used on their own.'`; `brand` omitted.
+
+{% include ptl-hero-banner.html title-style='overlay' title='A simple text banner' text='A title and supporting copy can be used on their own.' %}
+
+### Caption Brand Only
+
+**Values:** `title-style='caption'`; `image` omitted; `image-style='cover'` (default, unused); `img-position='center'` (default, unused without a cover image); `title='This title is replaced'`; `brand='Pathway Technologies Ltd.'`; `text` omitted. The logo appears because caption style and brand are both selected.
+
+{% include ptl-hero-banner.html title-style='caption' title='This title is replaced' brand='Pathway Technologies Ltd.' %}
